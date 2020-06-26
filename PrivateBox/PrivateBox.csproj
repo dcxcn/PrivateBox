@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5D29A683-8A60-414C-9514-BCA6422CC3E7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PrivateBox</RootNamespace>
+    <AssemblyName>PrivateBox</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>http://localhost/PrivateBox/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\AppDeploy\PrivateBox\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\AppDeploy\PrivateBox\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>PrivateBox.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>PrivateBox.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="AxInterop.DSOFramer, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\AxInterop.DSOFramer.dll</HintPath>
+    </Reference>
+    <Reference Include="CSkin, Version=16.1.14.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\CSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.DSOFramer, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>Dlls\Interop.DSOFramer.dll</HintPath>
+    </Reference>
+    <Reference Include="SevenZipSharp, Version=0.62.3757.29192, Culture=neutral, PublicKeyToken=20de82c62b055c88, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\SevenZipSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.70.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\FrmFileEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmFileEdit.Designer.cs">
+      <DependentUpon>FrmFileEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmSaveAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSaveAdmin.Designer.cs">
+      <DependentUpon>FrmSaveAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmLoginAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmLoginAdmin.Designer.cs">
+      <DependentUpon>FrmLoginAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmNodeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmNodeEdit.Designer.cs">
+      <DependentUpon>FrmNodeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DBSource.cs" />
+    <Compile Include="Model\dBHelper.cs" />
+    <Compile Include="Model\Image.cs" />
+    <Compile Include="Model\FileDBHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\FrmPlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPlayer.Designer.cs">
+      <DependentUpon>FrmPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\KP-ImageViewerV2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\KP-ImageViewerV2.designer.cs">
+      <DependentUpon>KP-ImageViewerV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\KP-ImageViewerV2\GifImage.cs" />
+    <Compile Include="UserControls\KP-ImageViewerV2\KP-DrawEngine.cs" />
+    <Compile Include="UserControls\KP-ImageViewerV2\KP-DrawObject.cs" />
+    <Compile Include="UserControls\KP-ImageViewerV2\MultiPageImage.cs" />
+    <Compile Include="UserControls\KP-ImageViewerV2\PanelDoubleBuffered.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\PagerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PagerControl.designer.cs">
+      <DependentUpon>PagerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DocViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DocViewer.Designer.cs">
+      <DependentUpon>DocViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PDFViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PDFViewer.Designer.cs">
+      <DependentUpon>PDFViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PicViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PicViewer.Designer.cs">
+      <DependentUpon>PicViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TxtViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TxtViewer.Designer.cs">
+      <DependentUpon>TxtViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WebViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\WebViewer.Designer.cs">
+      <DependentUpon>WebViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\FileTypeRegister.cs" />
+    <EmbeddedResource Include="Forms\FrmFileEdit.resx">
+      <DependentUpon>FrmFileEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSaveAdmin.resx">
+      <DependentUpon>FrmSaveAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmLoginAdmin.resx">
+      <DependentUpon>FrmLoginAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmNodeEdit.resx">
+      <DependentUpon>FrmNodeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Forms\FrmPlayer.resx">
+      <DependentUpon>FrmPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\KP-ImageViewerV2.resx">
+      <DependentUpon>KP-ImageViewerV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PagerControl.resx">
+      <DependentUpon>PagerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DocViewer.resx">
+      <DependentUpon>DocViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PDFViewer.resx">
+      <DependentUpon>PDFViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PicViewer.resx">
+      <DependentUpon>PicViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TxtViewer.resx">
+      <DependentUpon>TxtViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\WebViewer.resx">
+      <DependentUpon>WebViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="codecs.zip">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Database\FileDB.pdata">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Database\Seed.pbox">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Database\FileDB.pbox">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Database\Seed.pdata">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="7z.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Dlls\AxInterop.CTIAPICLIENTLib.dll" />
+    <Content Include="Dlls\AxInterop.DSOFramer.dll" />
+    <Content Include="Dlls\CSkin.dll" />
+    <Content Include="Dlls\CSkin.XML" />
+    <Content Include="Dlls\Interop.CTIAPICLIENTLib.dll" />
+    <Content Include="Dlls\Interop.DSOFramer.dll" />
+    <EmbeddedResource Include="Resources\dsoframer.ocx" />
+    <Content Include="Dlls\SevenZipSharp.dll" />
+    <Content Include="PrivateBox.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\btnBack.png" />
+    <Content Include="Resources\btnDrag.png" />
+    <Content Include="Resources\btnFitToScreen.png" />
+    <Content Include="Resources\btnNext.png" />
+    <Content Include="Resources\btnOpen.png" />
+    <Content Include="Resources\btnPreview.png" />
+    <Content Include="Resources\btnRotate270.png" />
+    <Content Include="Resources\btnRotate90.png" />
+    <Content Include="Resources\btnSelect.png" />
+    <Content Include="Resources\btnZoomIn.png" />
+    <Content Include="Resources\btnZoomOut.png" />
+    <None Include="Resources\CloseDownBack.bmp" />
+    <None Include="Resources\CloseMouseBack.bmp" />
+    <None Include="Resources\CloseNormlBack.bmp" />
+    <None Include="Resources\cmSysButton1.SysButtonDown.bmp" />
+    <None Include="Resources\cmSysButton1.SysButtonMouse.bmp" />
+    <None Include="Resources\cmSysButton1.SysButtonNorml.bmp" />
+    <None Include="Resources\cmSysButton2.SysButtonDown.bmp" />
+    <None Include="Resources\cmSysButton2.SysButtonMouse.bmp" />
+    <None Include="Resources\cmSysButton2.SysButtonNorml.bmp" />
+    <None Include="Resources\cmSysButton3.SysButtonDown.bmp" />
+    <None Include="Resources\cmSysButton3.SysButtonMouse.bmp" />
+    <None Include="Resources\cmSysButton3.SysButtonNorml.bmp" />
+    <Content Include="Resources\Drag.cur" />
+    <Content Include="Resources\Grab.cur" />
+    <None Include="Resources\MaxDownBack.bmp" />
+    <None Include="Resources\MaxMouseBack.bmp" />
+    <None Include="Resources\MaxNormlBack.bmp" />
+    <None Include="Resources\MiniDownBack.bmp" />
+    <None Include="Resources\MiniMouseBack.bmp" />
+    <None Include="Resources\MiniNormlBack.bmp" />
+    <None Include="Resources\RestoreDownBack.bmp" />
+    <None Include="Resources\RestoreMouseBack.bmp" />
+    <None Include="Resources\RestoreNormlBack.bmp" />
+    <None Include="Resources\ShadowPalace.bmp" />
+    <None Include="Resources\txtPwd.MouseBack.bmp" />
+    <None Include="Resources\txtPwd.NormlBack.bmp" />
+    <Content Include="SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="System.Data.SQLite.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="APlayer3Lib">
+      <Guid>{97830570-35FE-4195-83DE-30E79B718713}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxAPlayer3Lib">
+      <Guid>{97830570-35FE-4195-83DE-30E79B718713}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
